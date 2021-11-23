@@ -36,7 +36,9 @@ public class FirstFragment extends Fragment {
     private Button num14;
     private Button num15;
 
-    String operation;
+    String operation = "";
+    String history = "";
+
 
     @Override
     public View onCreateView(
@@ -120,7 +122,15 @@ public class FirstFragment extends Fragment {
                         operation = operation + '/';
                         break;
                     case R.id.num15:
+                        try {
+                            if(!operation.equals("")) {
+                                int results;
+                            }
+                        }catch (Exception e){
+                            e.getCause();
+                        }
 
+                        history = operation;
                         break;
                 }
                 updateView();
@@ -149,7 +159,8 @@ public class FirstFragment extends Fragment {
     }
 
     public void updateView () {
-        numberView.setText(String.format(operation));
+        numberView.setText(operation);
+        numberHistory.setText(history);
     }
 
     public void onViewCreated(@NonNull View view, Bundle savedInstanceState) {
